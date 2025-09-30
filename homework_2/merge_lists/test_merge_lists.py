@@ -1,5 +1,5 @@
 import unittest
-from .merge_lists import merge_two_lists_with_dummy, merge_two_lists_without_dummy, ListNode
+from .merge_lists import merge_two_lists_with_dummy, ListNode
 
 
 def list_to_linked_list(lst):
@@ -24,12 +24,6 @@ class TestMergeLists(unittest.TestCase):
         list1 = list_to_linked_list([1, 2, 4])
         list2 = list_to_linked_list([1, 3, 4])
         merged = merge_two_lists_with_dummy(list1, list2)
-        self.assertEqual(linked_list_to_list(merged), [1, 1, 2, 3, 4, 4])
-
-    def test_merge_without_dummy(self):
-        list1 = list_to_linked_list([1, 2, 4])
-        list2 = list_to_linked_list([1, 3, 4])
-        merged = merge_two_lists_without_dummy(list1, list2)
         self.assertEqual(linked_list_to_list(merged), [1, 1, 2, 3, 4, 4])
 
 if __name__ == '__main__':
