@@ -5,30 +5,30 @@ class Node:
 
 class Queue:
     def __init__(self):
-        self.front = None
-        self.rear = None
+        self.start = None
+        self.finish = None
 
     def is_empty(self):
-        return self.front is None
+        return self.start is None
 
     def enqueue(self, value):
         new_node = Node(value)
-        if self.rear is None:
-            self.front = self.rear = new_node
+        if self.finish is None:
+            self.start = self.finish = new_node
             return
-        self.rear.next = new_node
-        self.rear = new_node
+        self.finish.next = new_node
+        self.finish = new_node
 
     def dequeue(self):
         if self.is_empty():
             raise IndexError("dequeue from empty queue")
-        value = self.front.value
-        self.front = self.front.next
-        if self.front is None:
-            self.rear = None
+        value = self.start.value
+        self.start = self.start.next
+        if self.start is None:
+            self.finish = None
         return value
 
     def peek(self):
         if self.is_empty():
             raise IndexError("peek from empty queue")
-        return self.front.value
+        return self.start.value

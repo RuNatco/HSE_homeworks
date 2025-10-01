@@ -18,9 +18,10 @@ class TestValidateStackSequences(unittest.TestCase):
         self.assertTrue(validate_stack_sequences(pushed, popped))
 
     def test_single_element(self):
-        pushed = [1]
-        popped = [1]
+        pushed = [42]
+        popped = [42]
         self.assertTrue(validate_stack_sequences(pushed, popped))
+    
 
 if __name__ == '__main__':
     unittest.main()
