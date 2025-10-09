@@ -1,5 +1,5 @@
 import unittest
-from two_sum import two_sum
+from .two_sum import two_sum
 
 class TestTwoSum(unittest.TestCase):
     def test_examples(self):
@@ -20,6 +20,8 @@ class TestTwoSum(unittest.TestCase):
     def test_single_element_array(self):
         with self.assertRaises(ValueError):
             two_sum([1], 1)
+    def test_no_solution(self):
+        self.assertEqual(two_sum([1, 2, 3, 4, 5], 10), None)
 
 if __name__ == '__main__':
     unittest.main()
